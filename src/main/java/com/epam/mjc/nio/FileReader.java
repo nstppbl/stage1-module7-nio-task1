@@ -13,12 +13,10 @@ public class FileReader {
         HashMap<String, String> map = new HashMap<>();
         try {
             String content = new String(Files.readAllBytes(Paths.get(file.toURI())));
-                while (content != null) {
                     String[] keyValuePair = content.split(": ", 2);
                     String key = keyValuePair[0];
                     String value = keyValuePair[1];
                     map.put(key,value);
-                }
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
